@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="maps" nsURI="maps" nsPrefix="maps">
+  <eClassifiers xsi:type="ecore:EClass" name="map">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="space" upperBound="-1"
+        eType="#//publicSpace" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="road" upperBound="-1" eType="#//road"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="pedestrian" eSuperTypes="#//road"/>
+  <eClassifiers xsi:type="ecore:EClass" name="street" eSuperTypes="#//road"/>
+  <eClassifiers xsi:type="ecore:EClass" name="garden" eSuperTypes="#//publicSpace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="square" eSuperTypes="#//publicSpace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="publicSpace" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="borderedBy" lowerBound="1"
+        upperBound="-1" eType="#//road" eOpposite="#//road/border"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="road" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="border" upperBound="-1"
+        eType="#//publicSpace" eOpposite="#//publicSpace/borderedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="meet" upperBound="-1" eType="#//road"/>
+  </eClassifiers>
+</ecore:EPackage>

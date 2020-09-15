@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<maps:map xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:maps="maps"
+    xsi:schemaLocation="maps ../Maps.ecore"
+    name="MaMap">
+  <space xsi:type="maps:square"
+      name="s1"
+      borderedBy="//@road.0 //@road.3"/>
+  <road xsi:type="maps:pedestrian"
+      name="p1"
+      length="10"
+      border="//@space.0"
+      meet="//@road.0"/>
+  <road xsi:type="maps:street"
+      name="street swagg"
+      length="500"
+      meet="//@road.0"/>
+  <road xsi:type="maps:pedestrian"
+      name="grande ruelle"
+      length="5000"/>
+  <road xsi:type="maps:pedestrian"
+      name="p2"
+      length="75000"
+      border="//@space.0"
+      meet="//@road.2"/>
+</maps:map>
